@@ -11,7 +11,7 @@
   <img alt="License" src="https://img.shields.io/github/license/voildwalker/OCHUB?style=flat-square">
 </p>
 
-<p align="center"><small>高性能、极简、安全的 WireGuard 自动化安装与管理脚本。复杂网络配置被封装为清晰的人机交互，数分钟上线稳定可靠的私人 VPN。</small></p>
+<p align="center"><small>复杂网络配置被封装为清晰的人机交互，数分钟上线稳定可靠的私人 WireGuard。</small></p>
 
 ---
 
