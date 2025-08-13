@@ -163,7 +163,7 @@ sudo rm -rf /etc/wireguard /root/ochub_wg_clients
 
 ## 📜 许可证与声明
 <small>
-- 许可证：MIT License（见仓库 LICENSE）  
+- 许可证：MIT License  
 - 使用前请遵守所在地区法律与服务条款；由此产生的风险与责任由用户自行承担
 </small>
 
