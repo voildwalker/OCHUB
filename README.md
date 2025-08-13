@@ -22,18 +22,25 @@ bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker
 ```
 
 <small>
-- 或两步法（更直观）：
-  
-  ```bash
-  curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o install_wireguard.sh
-  sudo bash install_wireguard.sh
-  ```
-- 不推荐：curl ... | sudo bash（会导致交互从管道读取，安装后直接退出，无法进入创建客户端）
+或两步法（保留脚本，便于后续管理）：
+</small>
+
+步骤 1：下载脚本
+```bash
+curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o install_wireguard.sh
+```
+
+步骤 2：执行脚本
+```bash
+sudo bash install_wireguard.sh
+```
+
+<small>
+- 不推荐：curl ... | sudo bash（管道会让交互从 stdin 读不到，从而安装后直接退出）
 - 原始文件：  
   裸链：https://raw.githubusercontent.com/voildwalker/OCHUB/refs/heads/main/install_wireguard.sh  
-  快链：https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh
-
-适用系统：Debian/Ubuntu（root 或具备 sudo 权限）
+  快链：https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh  
+- 适用系统：Debian/Ubuntu（root 或具备 sudo 权限）
 </small>
 
 ---
@@ -69,6 +76,19 @@ bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker
 ```bash
 bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o "$f" && sudo bash "$f"; rm -f "$f"'
 ```
+
+或两步法（把脚本留在本机，便于重复进入面板）：
+
+步骤 1：下载脚本
+```bash
+curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o install_wireguard.sh
+```
+
+步骤 2：执行脚本
+```bash
+sudo bash install_wireguard.sh
+```
+
 - 跟随交互：输入监听端口（与上一步一致）→ 自动创建首个客户端并显示二维码
 
 ### 3) 连接设备
@@ -76,7 +96,7 @@ bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker
 - 电脑端（Windows / macOS）：安装官方客户端 → SFTP 下载配置文件 /root/ochub_wg_clients/<name>.conf → 从文件导入
 
 ### 4) 后续管理
-- 再次运行脚本进入面板（若已保存到本地，则这样执行）：
+- 再次运行脚本进入面板（若已保存到本地）：
   ```bash
   sudo bash ./install_wireguard.sh
   ```
@@ -84,7 +104,7 @@ bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker
   - 查看活跃状态、握手时间、上下行流量
   - 一键卸载（不可逆）
 
-重要路径
+重要路径  
 - 服务器配置：/etc/wireguard/wg0.conf  
 - 客户端目录：/root/ochub_wg_clients/
 
