@@ -17,6 +17,7 @@
 ## ⚡ 极速上手（熟手优先）
 
 只需一条命令（临时文件法，交互最稳，安装完将直接进入“创建客户端”界面）：
+
 ```bash
 bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o "$f" && sudo bash "$f"; rm -f "$f"'
 ```
@@ -25,10 +26,12 @@ bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker
 或两步法（保留脚本，便于后续管理）：
 </small>
 
+
 步骤 1：下载脚本
 ```bash
 curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o install_wireguard.sh
 ```
+
 
 步骤 2：执行脚本
 ```bash
@@ -36,6 +39,7 @@ sudo bash install_wireguard.sh
 ```
 
 <small>
+
 - 不推荐：curl ... | sudo bash（管道会让交互从 stdin 读不到，从而安装后直接退出）
 
 - 原始文件：
@@ -53,9 +57,13 @@ sudo bash install_wireguard.sh
 
 <ul>
   <li><small>体验至上：交互式向导 + 智能默认，零门槛上手</small></li>
+  
   <li><small>稳定专业：内核转发、UFW、防火墙 NAT、密钥与端口全自动</small></li>
+  
   <li><small>开箱即用：自动生成客户端配置与二维码，手机一扫即连</small></li>
+  
   <li><small>全生命周期：安装、增删用户、查看状态、完全卸载一体化</small></li>
+  
   <li><small>Oracle Cloud 友好：明确放行步骤与常见问题提示</small></li>
 </ul>
 
@@ -143,8 +151,11 @@ sudo rm -rf /etc/wireguard /root/ochub_wg_clients
 
 <ul>
   <li><small>Core Stability：稳定、可复用的网络栈</small></li>
+  
   <li><small>UX-First：中文交互、明确提示、友好日志</small></li>
+  
   <li><small>Robust Code：依赖自检、APT 锁等待、异常更可读</small></li>
+  
   <li><small>V9.0 焦点：ASCII 标题逐行打印、表格列对齐、确认逻辑更顺手</small></li>
 </ul>
 
