@@ -1,7 +1,6 @@
 <div align="center">
 <h1>OCHUB · WireGuard 一键部署与全生命周期管理</h1>
 <p>Oracle Cloud mini 工具箱 - WireGuard 面板 V9.0</p>
-
 </div>
 
 <p align="center">
@@ -17,18 +16,19 @@
 
 ## ⚡ 极速上手（熟手优先）
 
-只需一条命令，后续全部由交互式面板引导完成：
+只需一条命令（临时文件法，交互最稳，安装完将直接进入“创建客户端”界面）：
 ```bash
-curl -sSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh | sudo bash
+bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o "$f" && sudo bash "$f"; rm -f "$f"'
 ```
 
 <small>
-- 保留脚本（便于日后管理）：
+- 或两步法（更直观）：
   
   ```bash
-  curl -sSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o install_wireguard.sh
+  curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o install_wireguard.sh
   sudo bash install_wireguard.sh
   ```
+- 不推荐：curl ... | sudo bash（会导致交互从管道读取，安装后直接退出，无法进入创建客户端）
 - 原始文件：  
   裸链：https://raw.githubusercontent.com/voildwalker/OCHUB/refs/heads/main/install_wireguard.sh  
   快链：https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh
@@ -45,7 +45,7 @@ curl -sSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireg
   <li><small>稳定专业：内核转发、UFW、防火墙 NAT、密钥与端口全自动</small></li>
   <li><small>开箱即用：自动生成客户端配置与二维码，手机一扫即连</small></li>
   <li><small>全生命周期：安装、增删用户、查看状态、完全卸载一体化</small></li>
-  <li><small>针对 Oracle Cloud 优化：明确放行步骤与常见问题提示</small></li>
+  <li><small>Oracle Cloud 友好：明确放行步骤与常见问题提示</small></li>
 </ul>
 
 ---
@@ -65,12 +65,10 @@ curl -sSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireg
   - 描述：WireGuard Port  
 - 提示：99% 的“能连上但无法上网”问题源自此步未正确放行
 
-### 2) 部署脚本
-- 通过 SSH 登录服务器
-- 执行：
-  ```bash
-  curl -sSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh | sudo bash
-  ```
+### 2) 部署脚本（推荐用临时文件法，交互最稳）
+```bash
+bash -c 'f=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh -o "$f" && sudo bash "$f"; rm -f "$f"'
+```
 - 跟随交互：输入监听端口（与上一步一致）→ 自动创建首个客户端并显示二维码
 
 ### 3) 连接设备
@@ -78,7 +76,7 @@ curl -sSL https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireg
 - 电脑端（Windows / macOS）：安装官方客户端 → SFTP 下载配置文件 /root/ochub_wg_clients/<name>.conf → 从文件导入
 
 ### 4) 后续管理
-- 再次运行脚本进入面板：
+- 再次运行脚本进入面板（若已保存到本地，则这样执行）：
   ```bash
   sudo bash ./install_wireguard.sh
   ```
