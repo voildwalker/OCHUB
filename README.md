@@ -169,4 +169,4 @@ sudo rm -rf /etc/wireguard /root/ochub_wg_clients
 
 ---
 
-<p align="center"><small>如果这个项目帮到了你，欢迎 Star。愿每位指挥官，都能以最少的步骤，获得一套稳定、优雅、可长期托管的 WireGuard 私人网络。</small></p>
+<p align="center"><small>如果这个项目帮到了你，欢迎 Star。愿你能以最少的步骤，获得一套稳定、优雅 WireGuard 私人网络。</small></p>
