@@ -37,9 +37,13 @@ sudo bash install_wireguard.sh
 
 <small>
 - 不推荐：curl ... | sudo bash（管道会让交互从 stdin 读不到，从而安装后直接退出）
-- 原始文件：  
-  裸链：https://raw.githubusercontent.com/voildwalker/OCHUB/refs/heads/main/install_wireguard.sh  
+
+- 原始文件：
+  
+  裸链：https://raw.githubusercontent.com/voildwalker/OCHUB/refs/heads/main/install_wireguard.sh
+  
   快链：https://raw.githubusercontent.com/voildwalker/OCHUB/main/install_wireguard.sh  
+  
 - 适用系统：Debian/Ubuntu（root 或具备 sudo 权限）
 </small>
 
