@@ -1,16 +1,4 @@
 <div align="center">
-
-<pre>
-   echo
-    printf "%s\n" "${C_GREEN} ██████╗  ██████╗██╗  ██╗██╗   ██╗██████╗${C_RESET}"
-    printf "%s\n" "${C_GREEN}██╔═══██╗██╔════╝██║  ██║██║   ██║██╔══██╗${C_RESET}"
-    printf "%s\n" "${C_GREEN}██║   ██║██║     ███████║██║   ██║██████╔╝${C_RESET}"
-    printf "%s\n" "${C_GREEN}██║   ██║██║     ██╔══██║██║   ██║██╔══██╗${C_RESET}"
-    printf "%s\n" "${C_GREEN}╚██████╔╝╚██████╗██║  ██║╚██████╔╝██████╔╝${C_RESET}"
-    printf "%s\n" "${C_GREEN} ╚═════╝  ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝${C_RESET}"
-    echo
-</pre>
-
 <h1>OCHUB · WireGuard 一键部署与全生命周期管理</h1>
 <p>Oracle Cloud mini 工具箱 - WireGuard 面板 V9.0</p>
 
